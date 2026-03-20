@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local data artifacts
+outputs/models/
+
+# Private progress log (keep local only)
+docs/andamento_interno.md
