@@ -28,15 +28,14 @@ TechChallenge1GFA/
 │   └── processed/      # Dados após limpeza e transformações
 │
 ├── notebooks/
-│   ├── 01_eda.ipynb           # Análise Exploratória de Dados
-│   ├── 02_preprocessing.ipynb # Pré-processamento e pipeline
-│   ├── 03_modeling.ipynb      # Treino e avaliação dos modelos
-│   └── 04_cnn_extra.ipynb     # EXTRA: CNN para imagens de mamografia
+│   ├── analise_exploratoria.ipynb  # Análise Exploratória de Dados
+│   ├── preprocessamento.ipynb      # Pré-processamento e pipeline
+│   ├── modelagem.ipynb             # Treino e avaliação dos modelos
+│   └── explicabilidade.ipynb       # Explicabilidade (Feature Importance + SHAP)
 │
 ├── src/
 │   ├── utils.py           # Funções auxiliares reutilizáveis
-│   ├── preprocessing.py   # Pipeline de pré-processamento
-│   └── models.py          # Definição e avaliação dos modelos
+│   └── inferencia.py      # Script simples para predição com modelo final
 │
 ├── outputs/
 │   ├── figures/    # Gráficos e visualizações exportados
@@ -63,21 +62,21 @@ TechChallenge1GFA/
 
 ## Etapas do Projeto
 
-### 1. Análise Exploratória (EDA) — `01_eda.ipynb`
+### 1. Análise Exploratória (EDA) — `analise_exploratoria.ipynb`
 
 - Carregamento dos dados
 - Estatísticas descritivas (média, mediana, desvio padrão)
 - Visualização de distribuições e correlações
 - Identificação de valores ausentes e outliers
 
-### 2. Pré-processamento — `02_preprocessing.ipynb`
+### 2. Pré-processamento — `preprocessamento.ipynb`
 
 - Limpeza de dados (valores nulos, inconsistências)
 - Conversão de variáveis categóricas (Label Encoding / One-Hot)
 - Normalização/padronização de variáveis numéricas
 - Análise de correlação e seleção de features
 
-### 3. Modelagem — `03_modeling.ipynb`
+### 3. Modelagem — `modelagem.ipynb`
 
 - Três algoritmos implementados:
   - Regressão Logística
@@ -85,9 +84,30 @@ TechChallenge1GFA/
   - K-Nearest Neighbors (KNN)
 - Divisão treino/teste (80/20)
 - Métricas: Accuracy, Recall, F1-score, Matriz de Confusão
-- Explicabilidade: Feature Importance + SHAP
 
-### 4. CNN – Extra — `04_cnn_extra.ipynb`
+### 4. Avaliação e Explicabilidade — `explicabilidade.ipynb`
+
+- Consolidação das métricas finais da Regressão Logística
+- Feature Importance por coeficientes
+- SHAP global (bar e beeswarm)
+- SHAP local (caso correto e falso negativo)
+- Análise de erros (FN/FP)
+- Ajuste controlado dentro do escopo (class_weight + threshold)
+
+### Modelo Final Oficial
+
+- Arquivo: `outputs/models/modelo_final_oficial.pkl`
+- Scaler: `outputs/models/scaler_final_oficial.pkl`
+- Melhor configuração encontrada: Regressão Logística com `class_weight='balanced'`
+- Métricas no teste:
+  - Accuracy: 0.9737
+  - Precision maligno: 0.9756
+  - Recall maligno: 0.9524
+  - F1 maligno: 0.9639
+  - Falsos negativos: 2
+  - Falsos positivos: 1
+
+### 5. CNN – Extra (Opcional)
 
 - Rede Neural Convolucional para análise de imagens de mamografia
 - Transfer Learning com modelo pré-treinado
@@ -109,6 +129,12 @@ docker run -p 8888:8888 tech-challenge-gfa
 ```bash
 pip install -r requirements.txt
 jupyter notebook
+```
+
+### Inferência Rápida (CSV)
+
+```bash
+python src/inferencia.py --input data/processed/X_test_raw.csv --output outputs/models/predicoes_teste.csv
 ```
 
 ---

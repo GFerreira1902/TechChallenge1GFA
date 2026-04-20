@@ -1,17 +1,64 @@
+# ========================================
 # Python
+# ========================================
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
 
+# ========================================
 # Virtual environment
+# ========================================
 .venv/
+env/
+venv/
 
+# ========================================
 # Jupyter
+# ========================================
 .ipynb_checkpoints/
 
-# Local data artifacts
-outputs/models/
+# ========================================
+# IDE / Editor
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Private progress log (keep local only)
-docs/andamento_interno.md
+# ========================================
+# OS
+# ========================================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ========================================
+# Dados (regeneraveis pelos notebooks)
+# ========================================
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# ========================================
+# Modelos binarios (regeneraveis)
+# ========================================
+outputs/models/*
+!outputs/models/.gitkeep
+
+# ========================================
+# Kaggle
+# ========================================
+kaggle.json
+
+# ========================================
+# Arquivos internos (nao entregaveis)
+# ========================================
+docs/
+_rebuild_eda.py
