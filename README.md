@@ -54,7 +54,6 @@ TechChallenge1GFA/
 | ----------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Breast Cancer Wisconsin | Classificação: tumor maligno ou benigno | [Kaggle](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data)           |
 | PCOS Dataset            | Classificação: presença de SOP          | [Kaggle](https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos) |
-| CBIS-DDSM _(extra)_     | Classificação de mamografias por CNN    | [Kaggle](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset)     |
 
 > **Como usar:** Baixe os datasets dos links acima e coloque os arquivos na pasta `data/raw/`.
 
@@ -107,12 +106,6 @@ TechChallenge1GFA/
   - Falsos negativos: 2
   - Falsos positivos: 1
 
-### 5. CNN – Extra (Opcional)
-
-- Rede Neural Convolucional para análise de imagens de mamografia
-- Transfer Learning com modelo pré-treinado
-- Avaliação com métricas de classificação de imagem
-
 ---
 
 ## Como Executar
@@ -147,5 +140,4 @@ python src/inferencia.py --input data/processed/X_test_raw.csv --output outputs/
 - Pandas / NumPy
 - Matplotlib / Seaborn
 - SHAP
-- TensorFlow / Keras _(extra CNN)_
 - Docker
