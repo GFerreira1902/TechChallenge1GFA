@@ -3,52 +3,17 @@
 ## Sistema Inteligente de Suporte ao Diagnóstico em Saúde Feminina
 
 **Curso:** Pós-Graduação em IA para Devs – FIAP  
-**Grupo:** GFA
+**Grupo/Integrantes:** Guilherme Ferreira de Arruda
 
 ---
 
 ## Sobre o Projeto
 
-Este projeto desenvolve uma solução de Machine Learning para apoiar profissionais de saúde na **identificação precoce de riscos e diagnósticos** relacionados à saúde da mulher.
-
-O sistema analisa dados médicos estruturados para detectar padrões de risco, como:
-
-- **Câncer de mama** (dataset Wisconsin)
-- **Síndrome dos Ovários Policísticos – PCOS** (dataset Kaggle)
+Este projeto tem como foco, desenvolver uma solução com uso de Machine Learning para analisar dados que podem ajudar na **identificação precoce de riscos e diagnósticos** relacionados à saúde da mulher, neste caso mais específico, se trata do ** Câncer de Mama **.
 
 ---
 
-## Estrutura do Projeto
-
-```
-TechChallenge1GFA/
-│
-├── data/
-│   ├── raw/            # Datasets originais baixados do Kaggle (não versionar arquivos grandes)
-│   └── processed/      # Dados após limpeza e transformações
-│
-├── notebooks/
-│   ├── analise_exploratoria.ipynb  # Análise Exploratória de Dados
-│   ├── preprocessamento.ipynb      # Pré-processamento e pipeline
-│   ├── modelagem.ipynb             # Treino e avaliação dos modelos
-│   └── explicabilidade.ipynb       # Explicabilidade (Feature Importance + SHAP)
-│
-├── src/
-│   ├── utils.py           # Funções auxiliares reutilizáveis
-│   └── inferencia.py      # Script simples para predição com modelo final
-│
-├── outputs/
-│   ├── figures/    # Gráficos e visualizações exportados
-│   └── models/     # Modelos treinados salvos (.pkl)
-│
-├── requirements.txt   # Dependências Python
-├── Dockerfile         # Container para reprodutibilidade
-└── README.md
-```
-
----
-
-## Datasets
+## DatasetS Utilizados
 
 | Dataset                 | Problema                                | Fonte                                                                                       |
 | ----------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -80,9 +45,9 @@ TechChallenge1GFA/
 - Três algoritmos implementados:
   - Regressão Logística
   - Árvore de Decisão
-  - K-Nearest Neighbors (KNN)
-- Divisão treino/teste (80/20)
-- Métricas: Accuracy, Recall, F1-score, Matriz de Confusão
+  - K-Nearest Neighbors / KNN
+- Divisão treino/teste
+- Métricas: Accuracy, Recall, F1-score, Matriz de Confusão...
 
 ### 4. Avaliação e Explicabilidade — `explicabilidade.ipynb`
 
