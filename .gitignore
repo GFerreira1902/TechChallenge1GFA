@@ -62,3 +62,4 @@ kaggle.json
 # ========================================
 docs/
 _rebuild_eda.py
+_gerar_pdf.py

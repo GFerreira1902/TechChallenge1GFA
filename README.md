@@ -3,7 +3,8 @@
 ## Sistema Inteligente de Suporte ao Diagnóstico em Saúde Feminina
 
 **Curso:** Pós-Graduação em IA para Devs – FIAP  
-**Grupo/Integrantes:** Guilherme Ferreira de Arruda
+**Grupo/Integrantes:** Guilherme Ferreira de Arruda  
+**Proposta escolhida:** A — Saúde da Mulher
 
 ---
 
@@ -11,16 +12,50 @@
 
 Este projeto tem como foco, desenvolver uma solução com uso de Machine Learning para analisar dados que podem ajudar na **identificação precoce de riscos e diagnósticos** relacionados à saúde da mulher, neste caso mais específico, se trata do ** Câncer de Mama **.
 
+> **Relatório Técnico completo:** [`docs/relatorio_tecnico.md`](docs/relatorio_tecnico.md)  
+> Contém análise exploratória, estratégias de pré-processamento, modelos avaliados, métricas, explicabilidade e análise crítica dos resultados.
+
 ---
 
 ## DatasetS Utilizados
 
-| Dataset                 | Problema                                | Fonte                                                                                       |
-| ----------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Breast Cancer Wisconsin | Classificação: tumor maligno ou benigno | [Kaggle](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data)           |
-| PCOS Dataset            | Classificação: presença de SOP          | [Kaggle](https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos) |
+| Dataset                 | Problema                                | Fonte                                                                             |
+| ----------------------- | --------------------------------------- | --------------------------------------------------------------------------------- |
+| Breast Cancer Wisconsin | Classificação: tumor maligno ou benigno | [Kaggle](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/data) |
 
-> **Como usar:** Baixe os datasets dos links acima e coloque os arquivos na pasta `data/raw/`.
+> **Como usar:** Baixe o dataset do link acima e coloque o arquivo na pasta `data/raw/`.
+
+### Configurando a Kaggle API (opcional)
+
+Em vez de baixar manualmente, você pode usar a Kaggle API:
+
+**1. Instale a biblioteca:**
+
+```bash
+pip install kaggle
+```
+
+**2. Obtenha seu token de autenticação:**
+
+- Acesse [kaggle.com](https://www.kaggle.com) > sua conta > **Settings** > **API** > **Create New Token**
+- Será baixado um arquivo `kaggle.json` com seu `username` e `key`
+
+**3. Coloque o arquivo na pasta correta:**
+
+- **Linux/Mac:** `~/.kaggle/kaggle.json`
+- **Windows:** `C:\Users\<seu-usuario>\.kaggle\kaggle.json`
+
+```bash
+# Linux/Mac: ajuste as permissões
+chmod 600 ~/.kaggle/kaggle.json
+```
+
+**4. Baixe o dataset:**
+
+```bash
+# Breast Cancer Wisconsin
+kaggle datasets download -d uciml/breast-cancer-wisconsin-data -p data/raw/ --unzip
+```
 
 ---
 
@@ -90,6 +125,11 @@ jupyter notebook
 ```
 
 ### Inferência Rápida (CSV)
+
+Use o script `src/inferencia.py` para gerar predições em novos dados sem precisar abrir o Jupyter. Ele carrega o modelo e o scaler salvos, aplica a padronização e salva as predições em CSV.
+
+- `--input`: caminho para o CSV com as features (sem a coluna alvo)
+- `--output`: caminho onde o arquivo de predições será salvo
 
 ```bash
 python src/inferencia.py --input data/processed/X_test_raw.csv --output outputs/models/predicoes_teste.csv
