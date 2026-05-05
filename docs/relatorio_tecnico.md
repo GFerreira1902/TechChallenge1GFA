@@ -192,7 +192,7 @@ As 10 features com maior impacto no modelo (por valor absoluto do coeficiente):
 | 9   | radius_worst        | +0.897      | Puxa para maligno |
 | 10  | concavity_mean      | +0.782      | Puxa para maligno |
 
-**Interpretação:** A maioria das features mais influentes empurra a decisão para maligno quando têm valores de coeficientes altos. No top 10, a única exceção é `compactness_se` (−0.907), que quando alto puxa para benigno. No top 15, `fractal_dimension_se` (−0.594) também apresenta coeficiente negativo, sendo a segunda feature com direção oposta à malignidade.
+**Observação:** A maioria das features mais influentes empurra a decisão para maligno quando têm valores de coeficientes altos. No top 10, a única exceção é `compactness_se` (−0.907), que quando alto puxa para benigno. No top 15, `fractal_dimension_se` (−0.594) também apresenta coeficiente negativo, sendo a segunda feature com direção oposta à malignidade.
 
 ### 6.4 SHAP — Explicação em contexto global
 
