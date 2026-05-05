@@ -60,6 +60,6 @@ kaggle.json
 # ========================================
 # Arquivos internos (nao entregaveis)
 # ========================================
-docs/
+docs/*.pdf
 _rebuild_eda.py
 _gerar_pdf.py
