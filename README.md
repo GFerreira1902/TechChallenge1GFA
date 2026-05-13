@@ -3,7 +3,7 @@
 ## Sistema Inteligente de Suporte ao Diagnóstico em Saúde Feminina
 
 **Curso:** Pós-Graduação em IA para Devs – FIAP  
-**Grupo/Integrantes:** Guilherme Ferreira de Arruda  
+**Grupo/Integrantes:** Guilherme Ferreira de Arruda - rm373210
 **Proposta escolhida:** A — Saúde da Mulher
 
 ---

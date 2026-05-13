@@ -3,7 +3,7 @@
 ## Sistema Inteligente de Suporte ao Diagnóstico em Saúde Feminina
 
 **Curso:** Pós-Graduação em IA para Devs — FIAP  
-**Grupo:** Guilherme Ferreira de Arruda  
+**Grupo:** Guilherme Ferreira de Arruda - rm373210
 **Proposta:** A — Saúde da Mulher  
 **Dataset:** Breast Cancer Wisconsin (Diagnostic)  
 **Repositório:** https://github.com/GFerreira1902/TechChallenge1GFA
