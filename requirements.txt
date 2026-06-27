@@ -24,3 +24,7 @@ kagglehub==0.3.4
 
 # Extra: Deep Learning (CNN)
 tensorflow==2.16.1
+
+# API e Segredos
+python-dotenv==1.0.1
+groq==0.8.0
